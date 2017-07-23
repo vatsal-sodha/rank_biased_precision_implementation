@@ -11,9 +11,11 @@ Parameters:
 How to Run:
 
 1) When range=1 and output isn’t saved
+
 python3.5 RBP.py RBP_eval --p 0.50 --qrel sample.qrels --trecFile sample.txt
 
 2)Output will be saved in RBP_eval_sample.txt
+
 python3.5 RBP.py RBP_eval --p 0.50 --qrel sample.qrels --trecFile sample.txt --save RBP_eval_sample.txt --range 3
 
 
@@ -22,16 +24,18 @@ File Formats:
 .qrels file:
 
 	1   0   100       1
-Query-Id 0 DocumentID Relevence
+    Query-Id 0 DocumentID Relevence
 
 TREC File:
 
 	1   Q0  100         -1  4.20    vatsal
-Query-Id Q0 DocumentID rank  sim     run_id
+    Query-Id Q0 DocumentID rank  sim     run_id
 Sim is assumed to be higher for the docs to be retrieved first. 
 File may contain no NULL characters. 
 Lines may contain fields after the run_id; they are ignored.
 This file should be sorted by sim in descending order
+
 Output file: 
-Query-Id RBP-Score  are two columns.
+     
+     Query-Id RBP-Score .
 
