@@ -31,12 +31,12 @@ File Formats:
 
 .qrels file:
 
-	 1   0   100       1
+	   1   0   100       1
     Query-Id 0 DocumentID Relevence
 
 TREC File:
 
-	 1   Q0   100       -1  4.20    vatsal
+	   1   Q0   100       -1  4.20    vatsal
     Query-Id Q0 DocumentID rank  sim     run_id
 Sim is assumed to be higher for the docs to be retrieved first. 
 File may contain no NULL characters. 
