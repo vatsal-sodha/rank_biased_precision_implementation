@@ -18,6 +18,8 @@ def RBP_eval(p,qrel,trecFile,range=1,save=None):
 	trecFileObject.close()
 	if save != None:
 		saveFileObject=open(save,"w",newline='')
+	else:	
+		print("QId"+" "+"RBP Score")
 	previousQid=""
 	total=0.0
 	index=0
