@@ -1,11 +1,11 @@
 ﻿# rank_biased_precision_implementation
-It is used to evaluate Information Retrieval System on RBP (Rank Biased Precision) matrix.
+It is used to evaluate Information Retrieval System on RBP (Rank Biased Precision) metric.
 
 Parameters:
 --p         pValue (required) ranges from 0 to 1
 --qrel      qrel file (required) similar to sample.qrels
 --trecFile  file in TREC Format(required)simliar to sample.txt 
---range     (default=1) Highest judged relevance label
+--gmax     (default=1) Highest judged relevance label
 --save      (optional) will save the output to file
 
 How to Run:
@@ -14,7 +14,7 @@ How to Run:
 python3.5 RBP.py RBP_eval --p 0.50 --qrel sample.qrels --trecFile sample.txt
 
 2)Output will be saved in RBP_eval_sample.txt
-python3.5 RBP.py RBP_eval --p 0.50 --qrel sample.qrels --trecFile sample.txt --save RBP_eval_sample.txt --range 3
+python3.5 RBP.py RBP_eval --p 0.50 --qrel sample.qrels --trecFile sample.txt --save RBP_eval_sample.txt --gmax 3
 
 
 File Formats:

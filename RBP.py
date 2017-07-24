@@ -9,7 +9,7 @@ from subprocess import check_output
 
 @baker.command
 
-def RBP_eval(p,qrel,trecFile,range=1,save=None):
+def RBP_eval(p,qrel,trecFile,gmax=1,save=None):
 	qrelFileObject=open(qrel,"r",newline='')
 	trecFileObject=open(trecFile,"r",newline='')
 	qrelFileList= qrelFileObject.readlines()
@@ -29,22 +29,22 @@ def RBP_eval(p,qrel,trecFile,range=1,save=None):
 		qrelRow=[x for x in qrelFileList if query in x]
 		qrelRow=qrelRow[0].split(" ")
 		if(qrelRow[0] == previousQid or i ==0):
-			total=total+(float(qrelRow[3])/range)*(float(p)**index)
+			total=total+(float(qrelRow[3])/gmax)*(float(p)**index)
 			index=index+1
 		else:
 			# print("index is %d" %index)
 			total=(1-float(p))*total
 			if save==None:
-				print(previousQid+" "+str(total))
+				print(previousQid+" "+"{0:.4f}".format(total))
 			else:
-				saveFileObject.write(previousQid+" "+str(total)+"\n")
+				saveFileObject.write(previousQid+" "+"{0:.4f}".format(total)+"\n")
 			index=0
 			total=0.0
 		previousQid=qrelRow[0]
 	total=(1-float(p))*total
 	if save== None:
-		print(row[0]+" "+str(total))
+		print(row[0]+" "+"{0:.4f}".format(total))
 	else:
-		saveFileObject.write(previousQid+" "+str(total)+"\n")
+		saveFileObject.write(previousQid+" "+"{0:.4f}".format(total)+"\n")
 		saveFileObject.close()
 baker.run()
