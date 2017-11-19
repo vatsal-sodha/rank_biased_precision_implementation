@@ -44,3 +44,5 @@ Output file:
      
      Query-Id RBP-Score .
 
+Reference:
+Alistair Moffat, Justin Zobel. Rank-Biased Precision for Measurement of Retrieval Effectiveness, ACM Transactions on Information Systems Vol. 27 Issue 1, December 2008.
